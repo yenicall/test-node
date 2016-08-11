@@ -12,11 +12,11 @@ throng(function (id) {
     res.send('hello world')
   })
   app.get('/cats', (req, res) => {
-    Cats.find({}, (e, r) => res.send(r))
+    Cats.find({}, (e, r) =>  res.send(JSON.stringify({e,r})))
   })
   app.get('/cats/p', (req, res) => {
     let cat = new Cats({name: uuid.v4()})
-    cat.save((e, r) => res.send(r))
+    cat.save((e, r) => res.send(JSON.stringify({e,r})))
   })
   app.listen(3000,()=>console.log('listen'))
 })
