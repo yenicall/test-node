@@ -16,7 +16,7 @@ throng(function (id) {
   })
   app.get('/cats/p', (req, res) => {
     let cat = new Cats({name: uuid.v4()})
-    cat.save((e, r) => r.send(r))
+    cat.save((e, r) => res.send(r))
   })
   app.listen(3000,()=>console.log('listen'))
 })
