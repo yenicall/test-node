@@ -18,4 +18,5 @@ throng(function (id) {
     let cat = new Cats({name: uuid.v4()})
     cat.save((e, r) => r.send(r))
   })
+  app.listen(3000)
 })
