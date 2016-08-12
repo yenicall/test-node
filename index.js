@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const uuid = require('uuid')
 throng(function (id) {
   console.log(`Started worker ${id}`)
-  mongoose.connect('mongodb://mongo:27017/test', {replset: {rs_name: 'rs0'}})
+  mongoose.connect('mongodb://mongo,mongo/test?replicaSet=rs0')
   let Cats = mongoose.model('Cats', mongoose.Schema({ name: String }))
   let app = express()
   app.get('/', (req, res) => {
